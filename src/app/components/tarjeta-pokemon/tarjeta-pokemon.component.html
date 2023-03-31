@@ -1,1 +1,9 @@
-<p>tarjeta-pokemon works!</p>
+<div id="container" [ngClass]="{seleccionado: select}">
+    <img src="../../../assets/icons8-sort-right-26.png" id="flecha" alt="flecha" *ngIf="select">
+    <div class="tarjeta" [ngClass]="{seleccionado: select}" *ngIf="data" (click)="clicked.emit(id)">
+        <div class="circulo"></div>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" alt="pokemon">
+        <span>No. {{id}}</span>
+        <span>{{data.name | titlecase}}</span>
+    </div>
+</div>

@@ -1,1 +1,27 @@
-<p>detalle-pokemon works!</p>
+<div id="backdrop" [ngClass]="{escondido: !abierto}" (click)="close.emit()"></div>
+<div id="container">
+    <div id="datos">
+        <div class="area">
+            <app-tarjeta-pokemon 
+            [fullFata]="pokemon"
+            ></app-tarjeta-pokemon>
+        </div>
+        <div class="area">
+            <p><span class="etiqueta">Tipo: </span> <span class="tipo"
+                    *ngFor="let tipo of pokemon?.types">{{tipo.type.name |
+                    titlecase}}</span></p>
+            <p><span class="etiqueta">Altura: </span>{{pokemon?.height}}'</p>
+            <p><span class="etiqueta">Peso: </span>{{pokemon?.weight}} Lbs.</p>
+        </div>
+        <div class="area">
+            <div id="descContainer">
+                <div></div>
+                <p>{{descripcion}}</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <button (click)="close.emit()">
+        <img src="../../../assets/icons8-sort-right-26.png" alt="" [ngClass]="{girar: abierto}">
+    </button>
+</div>
