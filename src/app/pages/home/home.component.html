@@ -1,3 +1,17 @@
 <main id="container">
-    <app-foto-pokemon></app-foto-pokemon>
+    <app-detalle-pokemon
+    [abierto]="detalle"
+    (close)="cambiarEstado()"
+    [pokemon]="pokemonSelect"
+    [ngClass]="{abierto: detalle}"
+    ></app-detalle-pokemon>
+    <app-foto-pokemon [Pokemon]="pokemonSelect" [ngClass]="{abierto: detalle}"></app-foto-pokemon>
+    <div id="targetasContainer" #tarjetas (scroll)="onScroll($event)">
+        <app-tarjeta-pokemon *ngFor="let pokemon of listaPokemon"
+        [data]="pokemon"
+        [select]="pokemon.name === pokemonSelect?.name"
+        (clicked)="tarjetaClick($event)"
+        ></app-tarjeta-pokemon>
+        <img src="./../../../assets/spinner-2-svgrepo-com.svg" alt="spinner" class="spinner" *ngIf="cargando">
+    </div>
 </main>
