@@ -14,7 +14,7 @@ header {
             #71a4f3 97%,
             #8ec0f0 100%,
         );
-    h2{
+    a{
         color: var.$textWhite;
         background-color: #3d6fbe;
         height: 50px;
@@ -22,6 +22,7 @@ header {
         padding: 0 30px;
         border-radius: 50px;
         font-size: x-large;
+        text-decoration: none;
     }    
 }
 
@@ -50,8 +51,10 @@ footer{
     display: flex;
     align-items: self-end;
     justify-content:end;
-    height: 30px;
+    height: 50px;
+    background: #4c6ea8;
     p{
         padding: 0 10px;
+        padding-top: 10px;
     }
 }
